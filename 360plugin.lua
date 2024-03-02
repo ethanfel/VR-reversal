@@ -232,11 +232,11 @@ end
 
 local updateFilters = function ()
 	if not filterIsOn then
-		mp.command_native_async({"no-osd", "vf", "add", string.format("@vrrev:%sv360=%s:%s:reset_rot=1:in_stereo=%s:out_stereo=%s:id_fov=%s:d_fov=%.3f:yaw=%.3f:pitch=%s:roll=%.3f:w=%s*192.0:h=%.3f*108.0:h_flip=%s:interp=%s,setsar=sar=%.3f%s",in_flip,inputProjection,outputProjection,in_stereo,out_stereo,idfov,dfov,yaw,pitch,roll,res,res,h_flip,scaling,sarOutput,anaglyph_filter)}, updateComplete)
+		mp.command_native_async({"no-osd", "vf", "add", string.format("@vrrev:%sv360=%s:%s:reset_rot=1:in_stereo=%s:out_stereo=%s:id_fov=%s:d_fov=%.3f:yaw=%.3f:pitch=%s:roll=%.3f:w=%s*1920.0:h=%.3f*1080.0:h_flip=%s:interp=%s,setsar=sar=%.3f%s",in_flip,inputProjection,outputProjection,in_stereo,out_stereo,idfov,dfov,yaw,pitch,roll,res,res,h_flip,scaling,sarOutput,anaglyph_filter)}, updateComplete)
 		filterIsOn=true
 	elseif not updateAwaiting then
 		updateAwaiting=true
-		mp.command_native_async({"no-osd", "vf", "set", string.format("@vrrev:%sv360=%s:%s:reset_rot=1:in_stereo=%s:out_stereo=%s:id_fov=%s:d_fov=%.3f:yaw=%.3f:pitch=%s:roll=%.3f:w=%s*192.0:h=%.3f*108.0:h_flip=%s:interp=%s,setsar=sar=%.3f%s",in_flip,inputProjection,outputProjection,in_stereo,out_stereo,idfov,dfov,yaw,pitch,roll,res,res,h_flip,scaling,sarOutput,anaglyph_filter)}, updateComplete)
+		mp.command_native_async({"no-osd", "vf", "set", string.format("@vrrev:%sv360=%s:%s:reset_rot=1:in_stereo=%s:out_stereo=%s:id_fov=%s:d_fov=%.3f:yaw=%.3f:pitch=%s:roll=%.3f:w=%s*1920.0:h=%.3f*1080.0:h_flip=%s:interp=%s,setsar=sar=%.3f%s",in_flip,inputProjection,outputProjection,in_stereo,out_stereo,idfov,dfov,yaw,pitch,roll,res,res,h_flip,scaling,sarOutput,anaglyph_filter)}, updateComplete)
 	end
 	writeHeadPositionChange()
 end
